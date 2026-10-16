@@ -15,4 +15,4 @@ Each release may include version information, a manifest and SHA-256 checksums.
 
 ## Source
 
-Development and validation are maintained separately in the ARGOS GitLab repositories.
+Development and validation are maintained separately.
