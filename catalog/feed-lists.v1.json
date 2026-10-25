@@ -1,0 +1,680 @@
+{
+  "schema_version": 1,
+  "catalog_name": "ARGOS Pankratis Feed List Manager",
+  "scope": "Public metadata catalog of built-in IP and DNS feed sources only",
+  "publication_date": "2026-10-25",
+  "runtime_semantics": "Informational: the firmware's built-in catalog and the router's local UCI selections remain authoritative; this file is not automatically fetched or applied.",
+  "licensing": "Links and factual source metadata only. Third-party feed bodies are NOT mirrored here. Users must review each provider's redistribution, commercial/OEM, API and rate-limit terms.",
+  "ip_feeds": [
+    {
+      "id": "bogon",
+      "scope": "ip",
+      "level": "1.1",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 250,
+      "purpose": "Unallocated/invalid address space; first WAN rule",
+      "source_url_ipv4": "https://www.team-cymru.org/Services/Bogons/fullbogons-ipv4.txt",
+      "source_url_ipv6": "https://www.team-cymru.org/Services/Bogons/fullbogons-ipv6.txt",
+      "homepage": "https://www.team-cymru.com/bogon-reference",
+      "provider_terms_note": "Free public reference data (Team Cymru)."
+    },
+    {
+      "id": "spamhaus",
+      "scope": "ip",
+      "level": "1.2",
+      "direction": "both",
+      "format": "spamhausjson",
+      "estimated_entries": 1500,
+      "purpose": "Spamhaus DROP/eDROP criminal netblocks",
+      "source_url_ipv4": "https://www.spamhaus.org/drop/drop_v4.json",
+      "source_url_ipv6": "https://www.spamhaus.org/drop/drop_v6.json",
+      "homepage": "https://www.spamhaus.org/blocklists/do-not-route-or-peer/",
+      "provider_terms_note": "Free for non-commercial use; commercial use needs a Spamhaus licence. Max one download per hour."
+    },
+    {
+      "id": "dshield",
+      "scope": "ip",
+      "level": "1.3",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 20,
+      "purpose": "Top 20 attacking /24 subnets of the day (SANS ISC)",
+      "source_url_ipv4": "https://feeds.dshield.org/block.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://www.dshield.org/",
+      "provider_terms_note": "Non-commercial use with attribution (SANS ISC / DShield)."
+    },
+    {
+      "id": "firehol1",
+      "scope": "ip",
+      "level": "1.4",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 3900,
+      "purpose": "FireHOL level 1 aggregated high-confidence list",
+      "source_url_ipv4": "https://iplists.firehol.org/files/firehol_level1.netset",
+      "source_url_ipv6": null,
+      "homepage": "https://iplists.firehol.org/",
+      "provider_terms_note": "Aggregate list: inherits the terms of its sources (includes Spamhaus, DShield, abuse.ch)."
+    },
+    {
+      "id": "feodo",
+      "scope": "ip",
+      "level": "1.5",
+      "direction": "both",
+      "format": "plain",
+      "estimated_entries": 500,
+      "purpose": "Active botnet C2 servers (abuse.ch Feodo Tracker)",
+      "source_url_ipv4": "https://feodotracker.abuse.ch/downloads/ipblocklist.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://feodotracker.abuse.ch/",
+      "provider_terms_note": "abuse.ch data, CC0."
+    },
+    {
+      "id": "threat",
+      "scope": "ip",
+      "level": "2.1",
+      "direction": "both",
+      "format": "plain",
+      "estimated_entries": 2500,
+      "purpose": "Emerging Threats baseline attackers",
+      "source_url_ipv4": "https://rules.emergingthreats.net/fwrules/emerging-Block-IPs.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://rules.emergingthreats.net/",
+      "provider_terms_note": "Proofpoint Emerging Threats Open; see provider terms."
+    },
+    {
+      "id": "threatview",
+      "scope": "ip",
+      "level": "2.2",
+      "direction": "both",
+      "format": "plain",
+      "estimated_entries": 30000,
+      "purpose": "Threatview high-confidence malicious activity",
+      "source_url_ipv4": "https://threatview.io/Downloads/IP-High-Confidence-Feed.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://threatview.io/",
+      "provider_terms_note": "Free community feed; see provider terms."
+    },
+    {
+      "id": "ipsum",
+      "scope": "ip",
+      "level": "2.3",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 30000,
+      "purpose": "IPs listed by 3 or more independent blacklists",
+      "source_url_ipv4": "https://raw.githubusercontent.com/stamparm/ipsum/master/levels/3.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://github.com/stamparm/ipsum",
+      "provider_terms_note": "Unlicense (public domain)."
+    },
+    {
+      "id": "hagezi",
+      "scope": "ip",
+      "level": "2.4",
+      "direction": "outbound",
+      "format": "plain",
+      "estimated_entries": 3500,
+      "purpose": "Threat intel for outbound web ports",
+      "source_url_ipv4": "https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/ips/tif.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "provider_terms_note": "GPL-3.0."
+    },
+    {
+      "id": "urlhaus",
+      "scope": "ip",
+      "level": "2.5",
+      "direction": "outbound",
+      "format": "extract",
+      "estimated_entries": 10000,
+      "purpose": "Malware payload hosts (abuse.ch URLhaus)",
+      "source_url_ipv4": "https://urlhaus.abuse.ch/downloads/ids/",
+      "source_url_ipv6": null,
+      "homepage": "https://urlhaus.abuse.ch/",
+      "provider_terms_note": "abuse.ch data, CC0."
+    },
+    {
+      "id": "urlvir",
+      "scope": "ip",
+      "level": "2.6",
+      "direction": "outbound",
+      "format": "plain",
+      "estimated_entries": 6000,
+      "purpose": "Known malware distribution IPs",
+      "source_url_ipv4": "https://iplists.firehol.org/files/urlvir.ipset",
+      "source_url_ipv6": null,
+      "homepage": "https://iplists.firehol.org/",
+      "provider_terms_note": "Archived list via FireHOL; inherits the original terms."
+    },
+    {
+      "id": "webclient",
+      "scope": "ip",
+      "level": "2.7",
+      "direction": "outbound",
+      "format": "plain",
+      "estimated_entries": 6000,
+      "purpose": "Infected web servers for browsing protection",
+      "source_url_ipv4": "https://iplists.firehol.org/files/firehol_webclient.netset",
+      "source_url_ipv6": null,
+      "homepage": "https://iplists.firehol.org/",
+      "provider_terms_note": "Aggregate list: inherits the terms of its sources."
+    },
+    {
+      "id": "cinsscore",
+      "scope": "ip",
+      "level": "3.1",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 15000,
+      "purpose": "CI Army honeypot-scored attackers",
+      "source_url_ipv4": "https://cinsscore.com/list/ci-badguys.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://cinsscore.com/",
+      "provider_terms_note": "Free CINS Army list; see provider terms."
+    },
+    {
+      "id": "debl",
+      "scope": "ip",
+      "level": "3.2",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 45000,
+      "purpose": "Fail2ban reports for SSH/FTP/web attacks",
+      "source_url_ipv4": "https://lists.blocklist.de/lists/all.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://www.blocklist.de/",
+      "provider_terms_note": "Free; see provider terms."
+    },
+    {
+      "id": "bruteforceblock",
+      "scope": "ip",
+      "level": "3.3",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 800,
+      "purpose": "Active SSH brute-forcers",
+      "source_url_ipv4": "https://danger.rulez.sk/projects/bruteforceblocker/blist.php",
+      "source_url_ipv6": null,
+      "homepage": "https://danger.rulez.sk/",
+      "provider_terms_note": "Free; see provider terms."
+    },
+    {
+      "id": "firehol2",
+      "scope": "ip",
+      "level": "3.4",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 25000,
+      "purpose": "FireHOL level 2: attacks of the last 48 h",
+      "source_url_ipv4": "https://iplists.firehol.org/files/firehol_level2.netset",
+      "source_url_ipv6": null,
+      "homepage": "https://iplists.firehol.org/",
+      "provider_terms_note": "Aggregate list: inherits the terms of its sources."
+    },
+    {
+      "id": "etcompromised",
+      "scope": "ip",
+      "level": "3.5",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 1000,
+      "purpose": "Known compromised attacking servers",
+      "source_url_ipv4": "https://iplists.firehol.org/files/et_compromised.ipset",
+      "source_url_ipv6": null,
+      "homepage": "https://iplists.firehol.org/",
+      "provider_terms_note": "Emerging Threats data via FireHOL; see provider terms."
+    },
+    {
+      "id": "greensnow",
+      "scope": "ip",
+      "level": "3.6",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 5000,
+      "purpose": "Automated scanners and honeypot hits",
+      "source_url_ipv4": "https://blocklist.greensnow.co/greensnow.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://greensnow.co/",
+      "provider_terms_note": "Free; see provider terms."
+    },
+    {
+      "id": "turris",
+      "scope": "ip",
+      "level": "3.7",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 15000,
+      "purpose": "Attacks seen by Turris routers",
+      "source_url_ipv4": "https://view.sentinel.turris.cz/greylist-data/greylist-latest.csv",
+      "source_url_ipv6": null,
+      "homepage": "https://view.sentinel.turris.cz/",
+      "provider_terms_note": "Turris Sentinel greylist; see provider terms."
+    },
+    {
+      "id": "binarydefense",
+      "scope": "ip",
+      "level": "3.8",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 1500,
+      "purpose": "Binary Defense ban list",
+      "source_url_ipv4": "https://iplists.firehol.org/files/bds_atif.ipset",
+      "source_url_ipv6": null,
+      "homepage": "https://iplists.firehol.org/",
+      "provider_terms_note": "Binary Defense data via FireHOL; see provider terms."
+    },
+    {
+      "id": "ipblackhole",
+      "scope": "ip",
+      "level": "3.9",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 15000,
+      "purpose": "Daily dynamic scanning feed",
+      "source_url_ipv4": "https://blackhole.monster/blackhole-today",
+      "source_url_ipv6": null,
+      "homepage": "https://blackhole.monster/",
+      "provider_terms_note": "See provider terms."
+    },
+    {
+      "id": "ipexdbl",
+      "scope": "ip",
+      "level": "3.10",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 30000,
+      "purpose": "IPEX dynamic malicious IPs",
+      "source_url_ipv4": "https://raw.githubusercontent.com/ZEROF/ipextractor/main/ipexdbl.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://github.com/ZEROF/ipextractor",
+      "provider_terms_note": "See repository licence."
+    },
+    {
+      "id": "ipthreat",
+      "scope": "ip",
+      "level": "3.11",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 30000,
+      "purpose": "Botnet scanners and attackers",
+      "source_url_ipv4": "https://lists.ipthreat.net/file/ipthreat-lists/threat/threat-30.txt.gz",
+      "source_url_ipv6": null,
+      "homepage": "https://ipthreat.net/",
+      "provider_terms_note": "See provider terms."
+    },
+    {
+      "id": "myip",
+      "scope": "ip",
+      "level": "3.12",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 50000,
+      "purpose": "Scrapers and bots (web servers)",
+      "source_url_ipv4": "https://myip.ms/files/blacklist/general/latest_blacklist.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://myip.ms/",
+      "provider_terms_note": "Free for personal use; see provider terms."
+    },
+    {
+      "id": "becyber",
+      "scope": "ip",
+      "level": "3.13",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 25000,
+      "purpose": "Data-Shield malicious attackers",
+      "source_url_ipv4": "https://raw.githubusercontent.com/duggytuxy/Data-Shield_IPv4_Blocklist/refs/heads/main/prod_data-shield_ipv4_blocklist.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://github.com/duggytuxy/Data-Shield_IPv4_Blocklist",
+      "provider_terms_note": "See repository licence."
+    },
+    {
+      "id": "dns",
+      "scope": "ip",
+      "level": "4.1",
+      "direction": "outbound",
+      "format": "plain",
+      "estimated_entries": 40000,
+      "purpose": "Public DNS (53/853) to enforce the local resolver",
+      "source_url_ipv4": "https://public-dns.info/nameservers-all.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://public-dns.info/",
+      "provider_terms_note": "See provider terms."
+    },
+    {
+      "id": "doh",
+      "scope": "ip",
+      "level": "4.2",
+      "direction": "outbound",
+      "format": "plain",
+      "estimated_entries": 2200,
+      "purpose": "DoH endpoints to prevent DNS-filter bypass",
+      "source_url_ipv4": "https://raw.githubusercontent.com/dibdot/DoH-IP-blocklists/master/doh-ipv4.txt",
+      "source_url_ipv6": "https://raw.githubusercontent.com/dibdot/DoH-IP-blocklists/master/doh-ipv6.txt",
+      "homepage": "https://github.com/dibdot/DoH-IP-blocklists",
+      "provider_terms_note": "See repository licence."
+    },
+    {
+      "id": "tor",
+      "scope": "ip",
+      "level": "4.3",
+      "direction": "both",
+      "format": "plain",
+      "estimated_entries": 1500,
+      "purpose": "Tor exit nodes",
+      "source_url_ipv4": "https://www.dan.me.uk/torlist/?exit",
+      "source_url_ipv6": null,
+      "homepage": "https://www.dan.me.uk/tornodes",
+      "provider_terms_note": "Free; rate limited (max one download per 30 minutes)."
+    },
+    {
+      "id": "proxy",
+      "scope": "ip",
+      "level": "4.4",
+      "direction": "both",
+      "format": "plain",
+      "estimated_entries": 15000,
+      "purpose": "Open public proxies",
+      "source_url_ipv4": "https://iplists.firehol.org/files/proxylists.ipset",
+      "source_url_ipv6": null,
+      "homepage": "https://iplists.firehol.org/",
+      "provider_terms_note": "Aggregate list: inherits the terms of its sources."
+    },
+    {
+      "id": "vpn",
+      "scope": "ip",
+      "level": "4.5",
+      "direction": "both",
+      "format": "plain",
+      "estimated_entries": 40000,
+      "purpose": "Commercial VPN endpoints",
+      "source_url_ipv4": "https://raw.githubusercontent.com/X4BNet/lists_vpn/refs/heads/main/output/vpn/ipv4.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://github.com/X4BNet/lists_vpn",
+      "provider_terms_note": "See repository licence."
+    },
+    {
+      "id": "vpndc",
+      "scope": "ip",
+      "level": "4.6",
+      "direction": "both",
+      "format": "plain",
+      "estimated_entries": 120000,
+      "purpose": "Datacenter ranges (web servers only)",
+      "source_url_ipv4": "https://raw.githubusercontent.com/X4BNet/lists_vpn/refs/heads/main/output/datacenter/ipv4.txt",
+      "source_url_ipv6": null,
+      "homepage": "https://github.com/X4BNet/lists_vpn",
+      "provider_terms_note": "See repository licence."
+    },
+    {
+      "id": "voip",
+      "scope": "ip",
+      "level": "5.1",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 30000,
+      "purpose": "SIP abusers; only on SIP ports",
+      "source_url_ipv4": "https://voipbl.org/update/",
+      "source_url_ipv6": null,
+      "homepage": "https://voipbl.org/",
+      "provider_terms_note": "Free; see provider terms."
+    },
+    {
+      "id": "country",
+      "scope": "ip",
+      "level": "5.2",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 50000,
+      "purpose": "Geoblocking of selected countries",
+      "source_url_ipv4": "https://www.ipdeny.com/ipblocks/data/aggregated/{country}-aggregated.zone",
+      "source_url_ipv6": "https://www.ipdeny.com/ipv6/ipaddresses/aggregated/{country}-aggregated.zone",
+      "homepage": "https://www.ipdeny.com/",
+      "provider_terms_note": "Free; see provider terms. Needs a country code."
+    },
+    {
+      "id": "asn",
+      "scope": "ip",
+      "level": "5.3",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 500,
+      "purpose": "Targeted AS prefixes",
+      "source_url_ipv4": "https://asn.ipinfo.app/api/text/list/AS{asn}",
+      "source_url_ipv6": null,
+      "homepage": "https://ipinfo.app/",
+      "provider_terms_note": "See provider terms. Needs an AS number."
+    },
+    {
+      "id": "firehol3",
+      "scope": "ip",
+      "level": "6.1",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 35000,
+      "purpose": "Suspicious networks; log before drop",
+      "source_url_ipv4": "https://iplists.firehol.org/files/firehol_level3.netset",
+      "source_url_ipv6": null,
+      "homepage": "https://iplists.firehol.org/",
+      "provider_terms_note": "Aggregate list: inherits the terms of its sources."
+    },
+    {
+      "id": "firehol4",
+      "scope": "ip",
+      "level": "6.2",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 170000,
+      "purpose": "Aggressive heuristics; high FP risk",
+      "source_url_ipv4": "https://iplists.firehol.org/files/firehol_level4.netset",
+      "source_url_ipv6": null,
+      "homepage": "https://iplists.firehol.org/",
+      "provider_terms_note": "Aggregate list: inherits the terms of its sources."
+    },
+    {
+      "id": "backscatterer",
+      "scope": "ip",
+      "level": "6.3",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 50000,
+      "purpose": "Misdirected bounces; mail servers only",
+      "source_url_ipv4": "http://wget-mirrors.uceprotect.net/rbldnsd-all/ips.backscatterer.org.gz",
+      "source_url_ipv6": null,
+      "homepage": "https://www.backscatterer.org/",
+      "provider_terms_note": "UCEPROTECT; free for low-volume private use, see provider terms."
+    },
+    {
+      "id": "uceprotect1",
+      "scope": "ip",
+      "level": "6.4",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 120000,
+      "purpose": "Single spam IPs; SMTP only",
+      "source_url_ipv4": "http://wget-mirrors.uceprotect.net/rbldnsd-all/dnsbl-1.uceprotect.net.gz",
+      "source_url_ipv6": null,
+      "homepage": "https://www.uceprotect.net/",
+      "provider_terms_note": "UCEPROTECT; free for low-volume private use, see provider terms."
+    },
+    {
+      "id": "uceprotect2",
+      "scope": "ip",
+      "level": "6.5",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 250000,
+      "purpose": "Whole /24 spam networks; avoid on firewall",
+      "source_url_ipv4": "http://wget-mirrors.uceprotect.net/rbldnsd-all/dnsbl-2.uceprotect.net.gz",
+      "source_url_ipv6": null,
+      "homepage": "https://www.uceprotect.net/",
+      "provider_terms_note": "UCEPROTECT; free for low-volume private use, see provider terms."
+    },
+    {
+      "id": "uceprotect3",
+      "scope": "ip",
+      "level": "6.6",
+      "direction": "inbound",
+      "format": "plain",
+      "estimated_entries": 250000,
+      "purpose": "Whole provider ASNs; avoid on firewall",
+      "source_url_ipv4": "http://wget-mirrors.uceprotect.net/rbldnsd-all/dnsbl-3.uceprotect.net.gz",
+      "source_url_ipv6": null,
+      "homepage": "https://www.uceprotect.net/",
+      "provider_terms_note": "UCEPROTECT; free for low-volume private use, see provider terms."
+    }
+  ],
+  "dns_feeds": [
+    {
+      "id": "adguard-dns",
+      "format": "adblock",
+      "pack": "core",
+      "primary_category": "Advertising & Tracking",
+      "estimated_rules": 55000,
+      "labels": [
+        "ads:generic",
+        "tracker:web"
+      ],
+      "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt"
+    },
+    {
+      "id": "hagezi-tif-medium",
+      "format": "adblock",
+      "pack": "security",
+      "primary_category": "Malware & Botnets",
+      "estimated_rules": 2500,
+      "labels": [
+        "security:malware",
+        "security:c2"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.medium.txt"
+    },
+    {
+      "id": "phishing-army",
+      "format": "domain",
+      "pack": "security",
+      "primary_category": "Phishing & Fraud",
+      "estimated_rules": 25000,
+      "labels": [
+        "security:phishing"
+      ],
+      "url": "https://phishing.army/download/phishing_army_blocklist.txt"
+    },
+    {
+      "id": "hagezi-spam-tlds",
+      "format": "adblock",
+      "pack": "security",
+      "primary_category": "Spam TLDs",
+      "estimated_rules": 100,
+      "labels": [
+        "security:spam-tld"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/spam-tlds.txt"
+    },
+    {
+      "id": "hagezi-doh-vpn-proxy-bypass",
+      "format": "adblock",
+      "pack": "security",
+      "primary_category": "Bypass & Proxies",
+      "estimated_rules": 2000,
+      "labels": [
+        "access:bypass-service"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/doh-vpn-proxy-bypass.txt"
+    },
+    {
+      "id": "hagezi-nsfw",
+      "format": "adblock",
+      "pack": "policy",
+      "primary_category": "Adult & Explicit",
+      "estimated_rules": 230000,
+      "labels": [
+        "policy:adult"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nsfw.txt"
+    },
+    {
+      "id": "hagezi-gambling-mini",
+      "format": "adblock",
+      "pack": "policy",
+      "primary_category": "Gambling & Betting",
+      "estimated_rules": 75000,
+      "labels": [
+        "policy:gambling"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/gambling.mini.txt"
+    },
+    {
+      "id": "hagezi-social",
+      "format": "adblock",
+      "pack": "policy",
+      "primary_category": "Social Media & Communities",
+      "estimated_rules": 30000,
+      "labels": [
+        "policy:social"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/social.txt"
+    },
+    {
+      "id": "stevenblack-fakenews",
+      "format": "hosts",
+      "pack": "policy",
+      "primary_category": "Fake News & Disinformation",
+      "estimated_rules": 800,
+      "labels": [
+        "policy:fakenews"
+      ],
+      "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-only/hosts"
+    },
+    {
+      "id": "hagezi-anti-piracy",
+      "format": "adblock",
+      "pack": "policy",
+      "primary_category": "Piracy & Copyright",
+      "estimated_rules": 4500,
+      "labels": [
+        "policy:anti-piracy"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/anti.piracy.txt"
+    },
+    {
+      "id": "hagezi-native-winoffice",
+      "format": "adblock",
+      "pack": "telemetry",
+      "primary_category": "Device Telemetry",
+      "estimated_rules": 500,
+      "labels": [
+        "tracker:native",
+        "tracker:windows"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.winoffice.txt"
+    },
+    {
+      "id": "hagezi-native-apple",
+      "format": "adblock",
+      "pack": "telemetry",
+      "primary_category": "Device Telemetry",
+      "estimated_rules": 120,
+      "labels": [
+        "tracker:native",
+        "tracker:apple"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.apple.txt"
+    },
+    {
+      "id": "hagezi-native-smarttv",
+      "format": "adblock",
+      "pack": "telemetry",
+      "primary_category": "Device Telemetry",
+      "estimated_rules": 400,
+      "labels": [
+        "tracker:native",
+        "tracker:smarttv"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.samsung.txt"
+    }
+  ]
+}
