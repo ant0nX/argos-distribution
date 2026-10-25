@@ -3,7 +3,7 @@
   "catalog_name": "ARGOS Pankratis Feed List Manager",
   "scope": "Public metadata catalog of built-in IP and DNS feed sources only",
   "publication_date": "2026-10-25",
-  "runtime_semantics": "Versioned defaults are packaged at build time. Operator overrides are saved locally. Neither classification nor publication creates consumer actions or automatic remote updates.",
+  "runtime_semantics": "Source topic is descriptive. category_id is canonical from packaged site-rating-derived Pankratis taxonomy. Local source overrides feed matching to DNS/Web filters; profile-specific policy remains independently configured. Unmatched source topics remain Unknown.",
   "licensing": "Links and factual source metadata only. Third-party feed bodies are NOT mirrored here. Users must review each provider's redistribution, commercial/OEM, API and rate-limit terms.",
   "ip_feeds": [
     {
@@ -619,9 +619,12 @@
         "tracker:web"
       ],
       "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt",
-      "category": "Advertising & Tracking",
+      "category": "Marketing & Tracking",
       "purpose_short": "Ads and trackers",
-      "homepage": "https://adguard.com/"
+      "homepage": "https://adguard.com/",
+      "source_topic": "Advertising & Tracking",
+      "category_id": "marketing_tracking",
+      "mapping_status": "canonical"
     },
     {
       "id": "hagezi-tif-medium",
@@ -636,7 +639,10 @@
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.medium.txt",
       "category": "Malware & Botnets",
       "purpose_short": "Malware and C2 domains",
-      "homepage": "https://github.com/hagezi/dns-blocklists"
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Malware & Botnets",
+      "category_id": "malware_botnets",
+      "mapping_status": "canonical"
     },
     {
       "id": "phishing-army",
@@ -650,7 +656,10 @@
       "url": "https://phishing.army/download/phishing_army_blocklist.txt",
       "category": "Phishing & Fraud",
       "purpose_short": "Phishing domains",
-      "homepage": "https://phishing.army/"
+      "homepage": "https://phishing.army/",
+      "source_topic": "Phishing & Fraud",
+      "category_id": "phishing_fraud",
+      "mapping_status": "canonical"
     },
     {
       "id": "hagezi-spam-tlds",
@@ -662,9 +671,12 @@
         "security:spam-tld"
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/spam-tlds.txt",
-      "category": "Spam",
+      "category": "Spam TLDs",
       "purpose_short": "Spam-heavy TLDs",
-      "homepage": "https://github.com/hagezi/dns-blocklists"
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Spam",
+      "category_id": "spam_tlds",
+      "mapping_status": "canonical"
     },
     {
       "id": "hagezi-doh-vpn-proxy-bypass",
@@ -678,7 +690,10 @@
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/doh-vpn-proxy-bypass.txt",
       "category": "Bypass & Proxies",
       "purpose_short": "Bypass endpoints",
-      "homepage": "https://github.com/hagezi/dns-blocklists"
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Bypass & Proxies",
+      "category_id": "bypass_proxies",
+      "mapping_status": "canonical"
     },
     {
       "id": "hagezi-nsfw",
@@ -690,9 +705,12 @@
         "policy:adult"
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nsfw.txt",
-      "category": "Adult",
+      "category": "Adult & Explicit",
       "purpose_short": "Adult content",
-      "homepage": "https://github.com/hagezi/dns-blocklists"
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Adult",
+      "category_id": "adult_explicit",
+      "mapping_status": "canonical"
     },
     {
       "id": "hagezi-gambling-mini",
@@ -704,9 +722,12 @@
         "policy:gambling"
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/gambling.mini.txt",
-      "category": "Gambling",
+      "category": "Gambling & Betting",
       "purpose_short": "Gambling sites",
-      "homepage": "https://github.com/hagezi/dns-blocklists"
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Gambling",
+      "category_id": "gambling_betting",
+      "mapping_status": "canonical"
     },
     {
       "id": "hagezi-social",
@@ -718,9 +739,12 @@
         "policy:social"
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/social.txt",
-      "category": "Social Media",
+      "category": "Social Media & Communities",
       "purpose_short": "Social platforms",
-      "homepage": "https://github.com/hagezi/dns-blocklists"
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Social Media",
+      "category_id": "social_media_communities",
+      "mapping_status": "canonical"
     },
     {
       "id": "stevenblack-fakenews",
@@ -732,9 +756,13 @@
         "policy:fakenews"
       ],
       "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-only/hosts",
-      "category": "Fake News",
+      "category": "Unknown",
       "purpose_short": "Fake-news domains",
-      "homepage": "https://github.com/StevenBlack/hosts"
+      "homepage": "https://github.com/StevenBlack/hosts",
+      "source_topic": "Fake News",
+      "category_id": "unknown",
+      "mapping_status": "unmapped-no-equivalent-taxonomy-category",
+      "mapping_note": "Original topic preserved; fail to Unknown, not to an unrelated consumer category"
     },
     {
       "id": "hagezi-anti-piracy",
@@ -746,9 +774,13 @@
         "policy:anti-piracy"
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/anti.piracy.txt",
-      "category": "Piracy",
+      "category": "Unknown",
       "purpose_short": "Piracy domains",
-      "homepage": "https://github.com/hagezi/dns-blocklists"
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Piracy",
+      "category_id": "unknown",
+      "mapping_status": "unmapped-no-equivalent-taxonomy-category",
+      "mapping_note": "Original topic preserved; fail to Unknown, not to an unrelated consumer category"
     },
     {
       "id": "hagezi-native-winoffice",
@@ -761,9 +793,12 @@
         "tracker:windows"
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.winoffice.txt",
-      "category": "Telemetry",
+      "category": "Telemetry & AdTech",
       "purpose_short": "Windows/Office telemetry",
-      "homepage": "https://github.com/hagezi/dns-blocklists"
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Telemetry",
+      "category_id": "telemetry_adtech",
+      "mapping_status": "canonical"
     },
     {
       "id": "hagezi-native-apple",
@@ -776,9 +811,12 @@
         "tracker:apple"
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.apple.txt",
-      "category": "Telemetry",
+      "category": "Telemetry & AdTech",
       "purpose_short": "Apple telemetry",
-      "homepage": "https://github.com/hagezi/dns-blocklists"
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Telemetry",
+      "category_id": "telemetry_adtech",
+      "mapping_status": "canonical"
     },
     {
       "id": "hagezi-native-smarttv",
@@ -791,9 +829,12 @@
         "tracker:smarttv"
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.samsung.txt",
-      "category": "Telemetry",
+      "category": "Telemetry & AdTech",
       "purpose_short": "Smart TV telemetry",
-      "homepage": "https://github.com/hagezi/dns-blocklists"
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Telemetry",
+      "category_id": "telemetry_adtech",
+      "mapping_status": "canonical"
     }
   ],
   "category_options": {
@@ -815,19 +856,307 @@
       "Other / Custom"
     ],
     "dns": [
-      "Advertising & Tracking",
-      "Malware & Botnets",
-      "Phishing & Fraud",
-      "Spam",
-      "Bypass & Proxies",
-      "Adult",
-      "Gambling",
-      "Social Media",
-      "Fake News",
-      "Piracy",
-      "Telemetry",
-      "Other / Custom"
+      {
+        "id": "telemetry_adtech",
+        "name": "Telemetry & AdTech"
+      },
+      {
+        "id": "advertising_networks",
+        "name": "Advertising Networks"
+      },
+      {
+        "id": "marketing_tracking",
+        "name": "Marketing & Tracking"
+      },
+      {
+        "id": "audience_measurement",
+        "name": "Audience Measurement"
+      },
+      {
+        "id": "application_analytics",
+        "name": "Application Analytics"
+      },
+      {
+        "id": "automotive_vehicles",
+        "name": "Automotive & Vehicles"
+      },
+      {
+        "id": "business_productivity",
+        "name": "Business & Productivity"
+      },
+      {
+        "id": "communication_collaboration",
+        "name": "Communication & Collaboration"
+      },
+      {
+        "id": "professional_services",
+        "name": "Professional Services"
+      },
+      {
+        "id": "jobs_recruiting",
+        "name": "Jobs & Recruiting"
+      },
+      {
+        "id": "industrial_manufacturing",
+        "name": "Industrial & Manufacturing"
+      },
+      {
+        "id": "education_academia",
+        "name": "Education & Academia"
+      },
+      {
+        "id": "science_research",
+        "name": "Science & Research"
+      },
+      {
+        "id": "gaming_esports",
+        "name": "Gaming & Esports"
+      },
+      {
+        "id": "gambling_betting",
+        "name": "Gambling & Betting"
+      },
+      {
+        "id": "sports_recreation",
+        "name": "Sports & Recreation"
+      },
+      {
+        "id": "hobbies_collectibles",
+        "name": "Hobbies & Collectibles"
+      },
+      {
+        "id": "arts_culture",
+        "name": "Arts & Culture"
+      },
+      {
+        "id": "weather_meteorology",
+        "name": "Weather & Meteorology"
+      },
+      {
+        "id": "environment_conservation",
+        "name": "Environment & Conservation"
+      },
+      {
+        "id": "utilities_energy",
+        "name": "Utilities & Energy"
+      },
+      {
+        "id": "file_sharing_storage",
+        "name": "File Sharing & Storage"
+      },
+      {
+        "id": "peer_to_peer",
+        "name": "Peer-to-Peer"
+      },
+      {
+        "id": "finance_banking_crypto",
+        "name": "Finance, Banking & Crypto"
+      },
+      {
+        "id": "e_commerce_retail",
+        "name": "E-Commerce & Retail"
+      },
+      {
+        "id": "real_estate_housing",
+        "name": "Real Estate & Housing"
+      },
+      {
+        "id": "government_public_sector",
+        "name": "Government & Public Sector"
+      },
+      {
+        "id": "nonprofit_advocacy",
+        "name": "Nonprofit & Advocacy"
+      },
+      {
+        "id": "politics_advocacy",
+        "name": "Politics & Advocacy"
+      },
+      {
+        "id": "religion_spirituality",
+        "name": "Religion & Spirituality"
+      },
+      {
+        "id": "legal_services",
+        "name": "Legal Services"
+      },
+      {
+        "id": "health_fitness_pharmacy",
+        "name": "Health, Fitness & Pharmacy"
+      },
+      {
+        "id": "food_dining",
+        "name": "Food & Dining"
+      },
+      {
+        "id": "streaming_media",
+        "name": "Streaming & Media"
+      },
+      {
+        "id": "news_journalism",
+        "name": "News & Journalism"
+      },
+      {
+        "id": "publishing_reference",
+        "name": "Publishing & Reference"
+      },
+      {
+        "id": "web_search_portals",
+        "name": "Web & Search Portals"
+      },
+      {
+        "id": "personal_sites_blogs",
+        "name": "Personal Sites & Blogs"
+      },
+      {
+        "id": "forums_message_boards",
+        "name": "Forums & Message Boards"
+      },
+      {
+        "id": "adult_explicit",
+        "name": "Adult & Explicit"
+      },
+      {
+        "id": "alcohol",
+        "name": "Alcohol"
+      },
+      {
+        "id": "tobacco_nicotine",
+        "name": "Tobacco & Nicotine"
+      },
+      {
+        "id": "drugs_controlled_substances",
+        "name": "Drugs & Controlled Substances"
+      },
+      {
+        "id": "weapons",
+        "name": "Weapons"
+      },
+      {
+        "id": "identity_security",
+        "name": "Identity & Security"
+      },
+      {
+        "id": "remote_access",
+        "name": "Remote Access"
+      },
+      {
+        "id": "vpn_proxy_anonymization",
+        "name": "VPN, Proxy & Anonymization"
+      },
+      {
+        "id": "encrypted_dns",
+        "name": "Encrypted DNS"
+      },
+      {
+        "id": "social_media_communities",
+        "name": "Social Media & Communities"
+      },
+      {
+        "id": "dating_personals",
+        "name": "Dating & Personals"
+      },
+      {
+        "id": "webmail",
+        "name": "Webmail"
+      },
+      {
+        "id": "ai_machine_learning",
+        "name": "AI & Machine Learning"
+      },
+      {
+        "id": "cloud_infrastructure_hosting",
+        "name": "Cloud Infrastructure & Hosting"
+      },
+      {
+        "id": "developer_devops",
+        "name": "Developer & DevOps"
+      },
+      {
+        "id": "technology_computing",
+        "name": "Technology & Computing"
+      },
+      {
+        "id": "iot_smart_home",
+        "name": "IoT & Smart Home"
+      },
+      {
+        "id": "telecommunications_isps",
+        "name": "Telecommunications & ISPs"
+      },
+      {
+        "id": "software_downloads",
+        "name": "Software Downloads"
+      },
+      {
+        "id": "content_delivery_networks",
+        "name": "Content Delivery Networks"
+      },
+      {
+        "id": "travel_transport_logistics",
+        "name": "Travel, Transport & Logistics"
+      },
+      {
+        "id": "hospitality_accommodation",
+        "name": "Hospitality & Accommodation"
+      },
+      {
+        "id": "events_conferences",
+        "name": "Events & Conferences"
+      },
+      {
+        "id": "malware_botnets",
+        "name": "Malware & Botnets"
+      },
+      {
+        "id": "phishing_fraud",
+        "name": "Phishing & Fraud"
+      },
+      {
+        "id": "command_control",
+        "name": "Command & Control"
+      },
+      {
+        "id": "spam_tlds",
+        "name": "Spam TLDs"
+      },
+      {
+        "id": "malvertising",
+        "name": "Malvertising"
+      },
+      {
+        "id": "typosquatting_impersonation",
+        "name": "Typosquatting & Impersonation"
+      },
+      {
+        "id": "newly_registered_domains",
+        "name": "Newly Registered Domains"
+      },
+      {
+        "id": "suspicious_dga_domains",
+        "name": "Suspicious & DGA Domains"
+      },
+      {
+        "id": "bypass_proxies",
+        "name": "Bypass & Proxies"
+      },
+      {
+        "id": "dynamic_dns",
+        "name": "Dynamic DNS"
+      },
+      {
+        "id": "domain_parking",
+        "name": "Domain Parking"
+      },
+      {
+        "id": "url_shorteners",
+        "name": "URL Shorteners"
+      },
+      {
+        "id": "unknown",
+        "name": "Unknown"
+      }
     ]
   },
-  "catalog_revision": "categories-2026-10-25"
+  "catalog_revision": "taxonomy-ids-2026-10-25"
 }
