@@ -774,13 +774,12 @@
         "policy:anti-piracy"
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/anti.piracy.txt",
-      "category": "Unknown",
+      "category": "Illegal & Piracy",
       "purpose_short": "Piracy domains",
       "homepage": "https://github.com/hagezi/dns-blocklists",
       "source_topic": "Piracy",
-      "category_id": "unknown",
-      "mapping_status": "unmapped-no-equivalent-taxonomy-category",
-      "mapping_note": "Original topic preserved; fail to Unknown, not to an unrelated consumer category"
+      "category_id": "illegal_piracy",
+      "mapping_status": "canonical"
     },
     {
       "id": "hagezi-native-winoffice",
@@ -1155,8 +1154,12 @@
       {
         "id": "unknown",
         "name": "Unknown"
+      },
+      {
+        "id": "illegal_piracy",
+        "name": "Illegal & Piracy"
       }
     ]
   },
-  "catalog_revision": "taxonomy-ids-2026-10-25"
+  "catalog_revision": "taxonomy-illegal-piracy-2026-10-25"
 }
