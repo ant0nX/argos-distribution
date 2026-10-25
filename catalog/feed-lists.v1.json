@@ -620,7 +620,8 @@
       ],
       "url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt",
       "category": "Advertising & Tracking",
-      "purpose_short": "Ads and trackers"
+      "purpose_short": "Ads and trackers",
+      "homepage": "https://adguard.com/"
     },
     {
       "id": "hagezi-tif-medium",
@@ -634,7 +635,8 @@
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.medium.txt",
       "category": "Malware & Botnets",
-      "purpose_short": "Malware and C2 domains"
+      "purpose_short": "Malware and C2 domains",
+      "homepage": "https://github.com/hagezi/dns-blocklists"
     },
     {
       "id": "phishing-army",
@@ -647,7 +649,8 @@
       ],
       "url": "https://phishing.army/download/phishing_army_blocklist.txt",
       "category": "Phishing & Fraud",
-      "purpose_short": "Phishing domains"
+      "purpose_short": "Phishing domains",
+      "homepage": "https://phishing.army/"
     },
     {
       "id": "hagezi-spam-tlds",
@@ -660,7 +663,8 @@
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/spam-tlds.txt",
       "category": "Spam",
-      "purpose_short": "Spam-heavy TLDs"
+      "purpose_short": "Spam-heavy TLDs",
+      "homepage": "https://github.com/hagezi/dns-blocklists"
     },
     {
       "id": "hagezi-doh-vpn-proxy-bypass",
@@ -673,7 +677,8 @@
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/doh-vpn-proxy-bypass.txt",
       "category": "Bypass & Proxies",
-      "purpose_short": "Bypass endpoints"
+      "purpose_short": "Bypass endpoints",
+      "homepage": "https://github.com/hagezi/dns-blocklists"
     },
     {
       "id": "hagezi-nsfw",
@@ -686,7 +691,8 @@
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nsfw.txt",
       "category": "Adult",
-      "purpose_short": "Adult content"
+      "purpose_short": "Adult content",
+      "homepage": "https://github.com/hagezi/dns-blocklists"
     },
     {
       "id": "hagezi-gambling-mini",
@@ -699,7 +705,8 @@
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/gambling.mini.txt",
       "category": "Gambling",
-      "purpose_short": "Gambling sites"
+      "purpose_short": "Gambling sites",
+      "homepage": "https://github.com/hagezi/dns-blocklists"
     },
     {
       "id": "hagezi-social",
@@ -712,7 +719,8 @@
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/social.txt",
       "category": "Social Media",
-      "purpose_short": "Social platforms"
+      "purpose_short": "Social platforms",
+      "homepage": "https://github.com/hagezi/dns-blocklists"
     },
     {
       "id": "stevenblack-fakenews",
@@ -725,7 +733,8 @@
       ],
       "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-only/hosts",
       "category": "Fake News",
-      "purpose_short": "Fake-news domains"
+      "purpose_short": "Fake-news domains",
+      "homepage": "https://github.com/StevenBlack/hosts"
     },
     {
       "id": "hagezi-anti-piracy",
@@ -738,7 +747,8 @@
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/anti.piracy.txt",
       "category": "Piracy",
-      "purpose_short": "Piracy domains"
+      "purpose_short": "Piracy domains",
+      "homepage": "https://github.com/hagezi/dns-blocklists"
     },
     {
       "id": "hagezi-native-winoffice",
@@ -752,7 +762,8 @@
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.winoffice.txt",
       "category": "Telemetry",
-      "purpose_short": "Windows/Office telemetry"
+      "purpose_short": "Windows/Office telemetry",
+      "homepage": "https://github.com/hagezi/dns-blocklists"
     },
     {
       "id": "hagezi-native-apple",
@@ -766,7 +777,8 @@
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.apple.txt",
       "category": "Telemetry",
-      "purpose_short": "Apple telemetry"
+      "purpose_short": "Apple telemetry",
+      "homepage": "https://github.com/hagezi/dns-blocklists"
     },
     {
       "id": "hagezi-native-smarttv",
@@ -780,7 +792,8 @@
       ],
       "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.samsung.txt",
       "category": "Telemetry",
-      "purpose_short": "Smart TV telemetry"
+      "purpose_short": "Smart TV telemetry",
+      "homepage": "https://github.com/hagezi/dns-blocklists"
     }
   ],
   "category_options": {
