@@ -2,7 +2,7 @@
   "schema_version": 1,
   "catalog_name": "ARGOS Pankratis Feed List Manager",
   "scope": "Public metadata catalog of built-in IP and DNS feed sources only",
-  "publication_date": "2026-10-25",
+  "publication_date": "2026-10-26",
   "runtime_semantics": "Source topic is descriptive. category_id is canonical from packaged site-rating-derived Pankratis taxonomy. Local source overrides feed matching to DNS/Web filters; profile-specific policy remains independently configured. Unmatched source topics remain Unknown.",
   "licensing": "Links and factual source metadata only. Third-party feed bodies are NOT mirrored here. Users must review each provider's redistribution, commercial/OEM, API and rate-limit terms.",
   "ip_feeds": [
@@ -662,6 +662,40 @@
       "mapping_status": "canonical"
     },
     {
+      "id": "hagezi-fake",
+      "format": "adblock",
+      "pack": "security",
+      "primary_category": "Phishing & Fraud",
+      "estimated_rules": 17600,
+      "labels": [
+        "security:fraud"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/fake.txt",
+      "category": "Phishing & Fraud",
+      "purpose_short": "Fraudulent sites",
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Fraud",
+      "category_id": "phishing_fraud",
+      "mapping_status": "canonical"
+    },
+    {
+      "id": "cert-polska",
+      "format": "domain",
+      "pack": "security",
+      "primary_category": "Phishing & Fraud",
+      "estimated_rules": 125000,
+      "labels": [
+        "security:phishing"
+      ],
+      "url": "https://hole.cert.pl/domains/v2/domains.txt",
+      "category": "Phishing & Fraud",
+      "purpose_short": "Phishing domains",
+      "homepage": "https://cert.pl/en/warning-list/",
+      "source_topic": "Phishing",
+      "category_id": "phishing_fraud",
+      "mapping_status": "canonical"
+    },
+    {
       "id": "hagezi-spam-tlds",
       "format": "adblock",
       "pack": "security",
@@ -779,6 +813,40 @@
       "homepage": "https://github.com/hagezi/dns-blocklists",
       "source_topic": "Piracy",
       "category_id": "illegal_piracy",
+      "mapping_status": "canonical"
+    },
+    {
+      "id": "hagezi-dyndns",
+      "format": "adblock",
+      "pack": "policy",
+      "primary_category": "Dynamic DNS",
+      "estimated_rules": 1500,
+      "labels": [
+        "access:dynamic-dns"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/dyndns.txt",
+      "category": "Dynamic DNS",
+      "purpose_short": "Dynamic DNS domains",
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "Dynamic DNS",
+      "category_id": "dynamic_dns",
+      "mapping_status": "canonical"
+    },
+    {
+      "id": "hagezi-urlshortener",
+      "format": "adblock",
+      "pack": "policy",
+      "primary_category": "URL Shorteners",
+      "estimated_rules": 9900,
+      "labels": [
+        "access:url-shortener"
+      ],
+      "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/urlshortener.txt",
+      "category": "URL Shorteners",
+      "purpose_short": "URL shorteners",
+      "homepage": "https://github.com/hagezi/dns-blocklists",
+      "source_topic": "URL Shorteners",
+      "category_id": "url_shorteners",
       "mapping_status": "canonical"
     },
     {
@@ -1161,5 +1229,5 @@
       }
     ]
   },
-  "catalog_revision": "taxonomy-illegal-piracy-2026-10-25"
+  "catalog_revision": "dns-feeds-2026-10-26"
 }
