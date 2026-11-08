@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "name": "ARGOS Domains category enrichment source inventory",
+  "review_date": "2026-11-09",
+  "purpose": "Offline source discovery for site-rating-app to enrich canonical Domains/ARGDOM3 category taxonomy; not live router feeds, TI confidence or auto Block.",
+  "publication_mode": "metadata_only_no_fetch",
+  "consumer": "argos-site-rating-app/offline_domains_rating",
+  "taxonomy": "src/argos_site_rating/taxonomy.py (site-rating-app); do not invent new categories or rewrite existing accepted labels",
+  "rating_database": "site-rating-app/data/site-rating.db (only reviewed resolved domain/category to ARGDOM3)",
+  "already_integrated_or_used": [
+    {
+      "id": "existing-ut1-toulouse",
+      "label": "UT1 Toulouse topic categorization",
+      "status": "existing_hint_adapter_in_site_rating_app",
+      "repo_code": "src/argos_site_rating/v2/feeds.py:UT1_CATEGORY",
+      "source_homepage": "https://dsi.ut-capitole.fr/blacklists/",
+      "source_documentation": "https://dsi.ut-capitole.fr/blacklists/download/",
+      "source_license": "CC BY-SA 4.0",
+      "role": "category_hint",
+      "data_format": "tar_gz_by_category_domains",
+      "domain_scope": "listed_domain_may_cover_subdomains_if_policy_proves_owner",
+      "notes": "Use mapped category as hint; lists not all equally maintained; primary actively maintained category is adult. Existing pipeline already maps numerous UT1 labels."
+    },
+    {
+      "id": "existing-blocklistproject",
+      "label": "Block List Project lists",
+      "status": "existing_hint_adapter_in_site_rating_app",
+      "repo_code": "src/argos_site_rating/v2/feeds.py:BLP_CATEGORY",
+      "source_homepage": "https://blocklistproject.github.io/Lists/",
+      "source_documentation": "https://github.com/blocklistproject/Lists",
+      "source_license": "Unlicense stated by project; upstream attribution review",
+      "role": "category_or_risk_hint",
+      "data_format": "per_category_plain_domains",
+      "domain_scope": "exact_hostname_by_existing_adapter",
+      "notes": "Existing adapter already has categories for advertising, malware, phishing, piracy, gambling, social platforms, telemetry. Aggregate outputs include upstream lists; avoid duplicate confidence and automatic Block."
+    },
+    {
+      "id": "existing-domain-list-community",
+      "label": "v2fly domain-list-community geosite categories",
+      "status": "existing_hint_adapter_in_site_rating_app",
+      "repo_code": "src/argos_site_rating/v2/hints.py:DLC_LISTS",
+      "source_homepage": "https://github.com/v2fly/domain-list-community",
+      "source_documentation": "https://github.com/v2fly/domain-list-community",
+      "source_license": "MIT claimed by existing pipeline; validate upstream per-list",
+      "role": "category_hint",
+      "data_format": "geosite_domain_full_suffix_rules",
+      "domain_scope": "domain_vs_full_semantics_must_be_preserved",
+      "notes": "Already used for media/games/social/ecommerce/finance/education/cryptocurrency signals. Region, geolocation and routing lists are not content categories."
+    },
+    {
+      "id": "existing-wikidata",
+      "label": "Wikidata official websites and entities",
+      "status": "existing_enrichment_adapter_in_site_rating_app",
+      "repo_code": "src/argos_site_rating/v2/sources.py; src/argos_site_rating/v2/wikidata_build.py",
+      "source_homepage": "https://www.wikidata.org/",
+      "source_documentation": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "source_license": "CC0 structured data",
+      "role": "entity_identity_and_website_topic",
+      "data_format": "truthy_rdf_and_local_reduced_jsonl",
+      "domain_scope": "explicit_official_website_mapping_only",
+      "notes": "Already integrated; new ROR and OpenAlex records often overlap entity IDs and must not be counted as independent validation."
+    },
+    {
+      "id": "existing-cloudflare-radar-ranking",
+      "label": "Cloudflare Radar top-domain ranking",
+      "status": "existing_discovery_not_category_feed",
+      "repo_code": "tools/v2_chains/orchestrate.py; tools/v2_chains/db_import_radar.py",
+      "source_homepage": "https://radar.cloudflare.com/",
+      "source_documentation": "https://developers.cloudflare.com/radar/",
+      "source_license": "check_Radar_terms",
+      "role": "discovery_and_prioritization_only",
+      "data_format": "ranked_domains",
+      "domain_scope": "not_category_evidence",
+      "notes": "A top-rank is NOT a genre or quality label; Cloudflare per-domain category lookup is separate and not yet supported."
+    },
+    {
+      "id": "existing-tranco-ranking",
+      "label": "Tranco ranked domains",
+      "status": "existing_discovery_not_category_feed",
+      "repo_code": "src/argos_site_rating/domain_discovery.py",
+      "source_homepage": "https://tranco-list.eu/",
+      "source_documentation": "https://tranco-list.eu/",
+      "source_license": "review_Tranco_terms",
+      "role": "discovery_and_prioritization_only",
+      "data_format": "ranked_domains",
+      "domain_scope": "not_category_evidence",
+      "notes": "Popularity ranking is not an editorial category."
+    }
+  ],
+  "additional_candidates": [
+    {
+      "id": "curlie-directory-categories",
+      "status": "new_metadata_only",
+      "role": "primary_topic_category_candidate",
+      "confidence_ceiling_before_calibration": "medium",
+      "key_fields": [
+        "website_url",
+        "category_ids",
+        "category_path",
+        "editorial_title",
+        "description"
+      ],
+      "sample_output_categories": [
+        "News & Journalism",
+        "E-Commerce & Retail",
+        "Arts & Culture",
+        "Education & Academia",
+        "Travel, Transport & Logistics",
+        "Sports & Recreation"
+      ],
+      "ingestion": "TSV_join_by_category_id_then_URL_path_scope_check",
+      "license": "CC BY 3.0 with provider attribution",
+      "expected_scale": "~2.9 million site entries advertised; verify actual export before import",
+      "quality_flags": [
+        "manual_editorial_classification",
+        "category_hierarchy_crosswalk_required",
+        "monthly_refresh_not_sla",
+        "staleness_possible"
+      ]
+    },
+    {
+      "id": "ror-research-organizations",
+      "status": "new_metadata_only",
+      "role": "research_institution_identity_hint",
+      "confidence_ceiling_before_calibration": "medium",
+      "key_fields": [
+        "institution_id",
+        "organization_name",
+        "websites",
+        "organization_type"
+      ],
+      "sample_output_categories": [
+        "Education & Academia",
+        "Science & Research",
+        "Health, Fitness & Pharmacy"
+      ],
+      "ingestion": "verified_homepage_host_mapping_and_ROR_type_crosswalk",
+      "license": "CC0 1.0",
+      "quality_flags": [
+        "official_organization_type",
+        "not_a_generic_web_directory",
+        "overlap_with_Wikidata_OpenAlex",
+        "exclude_institutional_shared_CDN"
+      ]
+    },
+    {
+      "id": "openalex-institutions",
+      "status": "new_metadata_only",
+      "role": "academic_identity_secondary_reference",
+      "confidence_ceiling_before_calibration": "low",
+      "key_fields": [
+        "homepage_url",
+        "type",
+        "ror",
+        "institution_id"
+      ],
+      "sample_output_categories": [
+        "Education & Academia",
+        "Science & Research"
+      ],
+      "ingestion": "dedup_ROR_ids_then_verified_homepage_host",
+      "license": "CC0 snapshot; verify API access terms",
+      "quality_flags": [
+        "dependent_on_ROR",
+        "not_independent_confirmation",
+        "not_generic_topic_categories"
+      ]
+    },
+    {
+      "id": "cloudflare-domain-category-lookup",
+      "status": "new_metadata_only",
+      "role": "optional_content_category_api_reference",
+      "confidence_ceiling_before_calibration": "unvalidated",
+      "key_fields": [
+        "domain",
+        "content_category",
+        "security_category",
+        "timestamp"
+      ],
+      "sample_output_categories": [],
+      "ingestion": "operator_api_entitlement_and_terms_approval_required",
+      "license": "Cloudflare provider terms; redistribution not cleared",
+      "quality_flags": [
+        "not_public_bulk_feed",
+        "api_permission_unknown",
+        "content_security_categories_separate"
+      ]
+    },
+    {
+      "id": "iab-content-taxonomy-3-1",
+      "status": "new_metadata_only",
+      "role": "vocabulary_crosswalk_only",
+      "confidence_ceiling_before_calibration": "not_applicable",
+      "key_fields": [
+        "taxonomy_version",
+        "category_id",
+        "category_path"
+      ],
+      "sample_output_categories": [],
+      "ingestion": "versioned_manual_taxonomy_crosswalk_only",
+      "license": "IAB Taxonomy terms review",
+      "quality_flags": [
+        "not_per_domain_data",
+        "no_site_classification"
+      ]
+    },
+    {
+      "id": "osm-website-business-categories",
+      "status": "new_metadata_only",
+      "role": "geographic_business_identity_hint",
+      "confidence_ceiling_before_calibration": "low",
+      "key_fields": [
+        "website",
+        "shop",
+        "amenity",
+        "tourism",
+        "office"
+      ],
+      "sample_output_categories": [
+        "E-Commerce & Retail",
+        "Food & Dining",
+        "Hospitality & Accommodation",
+        "Automotive & Vehicles"
+      ],
+      "ingestion": "only_owner_verified_websites_and_contextual_osm_tags",
+      "license": "ODbL share-alike/attribution review required",
+      "quality_flags": [
+        "not_generic_web_category_data",
+        "website_may_be_shared_or_old",
+        "ODbL_database_rights_complex"
+      ]
+    }
+  ],
+  "source_count": {
+    "already_present": 6,
+    "new_candidates": 6
+  },
+  "policy": {
+    "never_auto_activate": true,
+    "provider_rights_and_attribution_required": true,
+    "no_automatic_confidence_promotion": true,
+    "no_automatic_override_of_reviewed_active_classifications": true,
+    "different_evidence_dimensions": [
+      "primary_site_topic",
+      "domain_advertising_or_tracking_function",
+      "malicious_or_phishing_reputation",
+      "organization_identity",
+      "popularity_rank_only"
+    ],
+    "matched_url_and_host_semantics": "Preserve exact URL/path and subdomain vs suffix ownership. More-specific verified subdomains may override registrable-domain category. Do not propagate a third-party hosted path to a shared parent domain.",
+    "data_normalization": "IDNA/punycode, public suffix awareness, canonical Unicode, URL host extraction, validate TLD; prevent localhost/private IP and broken domains.",
+    "provenance": "Retain source_id, source_version, observed_at, original_url, original_category, mapping_version, rights, issuer, role, expiry/freshness, and raw digest. Suppress duplicate votes from same upstream lineage.",
+    "conflict_policy": "Source evidence remains a hint until independent page/content/entity verification. Preserve multi-label evidence and classify site primary purpose separately from malware/ad-risk overlays.",
+    "required_acceptance": [
+      "No present source duplicated as a new independent vote",
+      "All candidate sources remain discovery_only and offline",
+      "No rating database mutation until calibrated/authorized adapter",
+      "No publisher rights inferred from public access",
+      "No silent truncation and no false positives from parent/subdomain mismatches",
+      "Test overlapping ROR/OpenAlex/Wikidata and BLP/HaGeZi/UT1 input lineage",
+      "Only resolved domain-category rows exported; unknown and conflicting stay unresolved"
+    ]
+  },
+  "excluded_or_deferred": [
+    {
+      "id": "DMOZ_historic",
+      "why": "Closed predecessor of Curlie; stale and overlapping lineage, not a second independent database"
+    },
+    {
+      "id": "Tranco_rankings",
+      "why": "Already domain discovery; rankings are not category labels"
+    },
+    {
+      "id": "open_source_security_blocklists",
+      "why": "Security/ads signal is not the site's primary topic. Feed Manager already has separate DNS lists and the site-rating-app already uses UT1/BLP."
+    },
+    {
+      "id": "Commercial_URL_category_APIs",
+      "why": "API access and embedding/redistribution rights must be approved before integration, not scraped as public bulk datasets"
+    },
+    {
+      "id": "IAB_taxonomy_vocab",
+      "why": "Vocabulary crosswalk is useful but provides no domain-category pairs by itself"
+    }
+  ]
+}
