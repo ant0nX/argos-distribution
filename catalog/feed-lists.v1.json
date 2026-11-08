@@ -1226,6 +1226,50 @@
       {
         "id": "illegal_piracy",
         "name": "Illegal & Piracy"
+      },
+      {
+        "id": "music_licensing_production",
+        "name": "Music Licensing & Production"
+      },
+      {
+        "id": "backup_sync_services",
+        "name": "Backup & Sync Services"
+      },
+      {
+        "id": "insurance",
+        "name": "Insurance"
+      },
+      {
+        "id": "remote_monitoring_management_rmm",
+        "name": "Remote Monitoring & Management (RMM)"
+      },
+      {
+        "id": "browser_extensions_privacy_tools",
+        "name": "Browser Extensions & Privacy Tools"
+      },
+      {
+        "id": "generative_ai_services",
+        "name": "Generative AI Services"
+      },
+      {
+        "id": "paste_code_sharing",
+        "name": "Paste & Code Sharing"
+      },
+      {
+        "id": "command_control_c2",
+        "name": "Command & Control (C2)"
+      },
+      {
+        "id": "cryptomining",
+        "name": "Cryptomining"
+      },
+      {
+        "id": "dns_tunneling_abuse",
+        "name": "DNS Tunneling & Abuse"
+      },
+      {
+        "id": "malware_phishing",
+        "name": "Malware & Phishing"
       }
     ]
   },
@@ -2205,6 +2249,8 @@
     "default_policy": "never_enable_or_block_on_catalog_presence",
     "taxonomy_scope": "feed signal/purpose is separate from website's primary domain classification and detector capabilities",
     "last_reviewed": "2026-11-09",
-    "source_rights": "all candidate rights and interfaces require independent review"
+    "source_rights": "all candidate rights and interfaces require independent review",
+    "taxonomy_category_options": 87,
+    "taxonomy_authority": "Pankratis packaged taxonomy.json (87 canonical IDs), not feed-topic candidate kind"
   }
 }
