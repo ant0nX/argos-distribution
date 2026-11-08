@@ -21,7 +21,8 @@
     "Source and consumer selection separate. TI, IPS, DNS, Web, future file/hash parser/Exchange are separate views on one provider source. No extra packet parser.",
     "Source endpoints marked null require source-specific resolution; do not guess auth, license, direct download URLs or mirror third-party content.",
     "Opaque API keys are private operator configuration; not included in registry.",
-    "Directory and catalog sources are discovery only, not blindly ingested as feeds."
+    "Directory and catalog sources are discovery only, not blindly ingested as feeds.",
+    "At review time the accessible SSLBL JA3 CSV itself was last updated in August 2021; do not infer live freshness from provider page refresh text."
   ],
   "existing_in_legacy_catalog": [
     {
@@ -64,7 +65,7 @@
       "publication_status": "discovery_only",
       "activation_eligible": false,
       "default_action": "monitor",
-      "notes": "Requires visibility of full server certificate; TLS 1.3 passive visibility is limited. No blind Block from certificate hash."
+      "notes": "Requires visibility of full server certificate; TLS 1.3 passive visibility is limited. No blind Block from certificate hash. Last inspected public CSV snapshot had August 2026 data; do not equate feed availability with current freshness."
     },
     {
       "id": "sslbl-ja3",
@@ -77,13 +78,15 @@
       "format": "ja3_md5_csv",
       "transport": "https_csv",
       "intended_consumer": "ti_correlation",
-      "priority": "high",
+      "priority": "low",
       "source_rights_status": "terms_review_required",
       "adapter_status": "new_adapter_required",
       "publication_status": "discovery_only",
       "activation_eligible": false,
       "default_action": "monitor",
-      "notes": "Provider explicitly warns of substantial false positives; Monitor/correlation only. Download no more frequently than provider minimum."
+      "notes": "The available CSV header reports last update 2021-08-03 despite site text about feed generation every 5 minutes. Historic malware JA3 only; no current-threat/auto-Block claim. Provider warns of significant false positives.",
+      "observed_source_last_updated": "2021-08-03",
+      "freshness": "stale_historic_reference"
     },
     {
       "id": "sslbl-c2-ip-port",
@@ -377,9 +380,9 @@
       "label": "Snort 3 Community Rules (GPLv2)",
       "homepage": "https://snort.org/downloads",
       "documentation_url": "https://www.snort.org/faq/what-are-community-rules",
-      "source_endpoint": "https://snort.org/downloads/community/snort3-community-rules.tar.gz",
+      "source_endpoint": null,
       "format": "snort3_rules_tar_gz",
-      "transport": "https_tarball",
+      "transport": "official_download_page_endpoint_verify",
       "intended_consumer": "ips_rules_import",
       "priority": "high",
       "source_rights_status": "gpl2_review",
@@ -387,7 +390,7 @@
       "publication_status": "discovery_only",
       "activation_eligible": false,
       "default_action": "monitor",
-      "notes": "GPLv2 community pack, not registered/subscriber rules. Snort3 language is not fully Suricata-compatible; validate each SID and dependencies, not blind conversion."
+      "notes": "GPLv2 community pack, not registered/subscriber rules. Snort3 language is not fully Suricata-compatible; validate each SID and dependencies, not blind conversion. Proposed direct archive path has not been independently fetched; use documented official download page until endpoint URL is validated."
     },
     {
       "id": "sslbl-suricata-ja3",
