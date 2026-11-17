@@ -3,7 +3,7 @@
 Public ARGOS binary releases and metadata-only feed-source catalogs.
 
 - [Releases](https://github.com/ant0nX/argos-distribution/releases)
-- [Single canonical Feed List Manager registry](catalog/feed-lists.v1.json) — 40 supported IP references, 17 published DNS references, 45 discovery-only candidates and 87 domain taxonomy options. The Pankratis firmware's current preinstalled UCI defaults include 13 of the published DNS feeds; registry presence alone never installs the other 4.
+- [Single canonical Feed List Manager registry](catalog/feed-lists.v1.json) — 40 supported IP references, 17 published DNS references, 45 discovery-only candidates and 76 domain taxonomy options (shared ARGOS taxonomy v7, synced from argos-pankratis). The Pankratis firmware's current preinstalled UCI defaults include 13 of the published DNS feeds; registry presence alone never installs the other 4.
 - The old [extended list](catalog/extended-source-candidates.v1.json) is **deprecated** and only points to the canonical catalog; it is not a second feed registry.
 
 ## Ad / tracker source options (discovery only)

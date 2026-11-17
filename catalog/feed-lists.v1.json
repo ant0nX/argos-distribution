@@ -1226,50 +1226,6 @@
       {
         "id": "illegal_piracy",
         "name": "Illegal & Piracy"
-      },
-      {
-        "id": "music_licensing_production",
-        "name": "Music Licensing & Production"
-      },
-      {
-        "id": "backup_sync_services",
-        "name": "Backup & Sync Services"
-      },
-      {
-        "id": "insurance",
-        "name": "Insurance"
-      },
-      {
-        "id": "remote_monitoring_management_rmm",
-        "name": "Remote Monitoring & Management (RMM)"
-      },
-      {
-        "id": "browser_extensions_privacy_tools",
-        "name": "Browser Extensions & Privacy Tools"
-      },
-      {
-        "id": "generative_ai_services",
-        "name": "Generative AI Services"
-      },
-      {
-        "id": "paste_code_sharing",
-        "name": "Paste & Code Sharing"
-      },
-      {
-        "id": "command_control_c2",
-        "name": "Command & Control (C2)"
-      },
-      {
-        "id": "cryptomining",
-        "name": "Cryptomining"
-      },
-      {
-        "id": "dns_tunneling_abuse",
-        "name": "DNS Tunneling & Abuse"
-      },
-      {
-        "id": "malware_phishing",
-        "name": "Malware & Phishing"
       }
     ]
   },
